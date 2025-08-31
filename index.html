@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Duolingo Prototype</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .container {
+            max-width: 480px;
+            margin: 0 auto;
+            width: 100%;
+            background: white;
+            min-height: 100vh;
+            box-shadow: 0 0 40px rgba(0,0,0,0.2);
+        }
+
+        /* Header */
+        .header {
+            background: #58cc02;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+
+        .header h1 {
+            font-size: 24px;
+            font-weight: 700;
+        }
+
+        .header-stats {
+            display: flex;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .streak {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+
+        .hearts {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            background: rgba(255,255,255,0.2);
+            padding: 5px 10px;
+            border-radius: 20px;
+        }
+
+        /* Navigation */
+        .nav-tabs {
+            display: flex;
+            background: white;
+            border-bottom: 2px solid #e5e5e5;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .nav-tab {
+            flex: 1;
+            padding: 15px;
+            text-align: center;
+            background: none;
+            border: none;
+            cursor: pointer;
+            color: #777;
+            font-size: 14px;
+            font-weight: 600;
+            transition: all 0.3s;
+        }
+
+        .nav-tab.active {
+            color: #58cc02;
+            border-bottom: 3px solid #58cc02;
+            margin-bottom: -2px;
+        }
+
+        .nav-tab:hover {
+            background: #f7f7f7;
+        }
+
+        /* Screens */
+        .screen {
+            display: none;
+            padding: 20px;
+            animation: fadeIn 0.3s;
+        }
+
+        .screen.active {
+            display: block;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Home Screen */
+        .course-progress {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            border-radius: 20px;
+            padding: 25px;
+            color: white;
+            margin-bottom: 25px;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
+        }
+
+        .course-title {
+            font-size: 28px;
+            font-weight: 700;
+            margin-bottom: 10px;
+        }
+
+        .progress-bar {
+            background: rgba(255,255,255,0.3);
+            height: 12px;
+            border-radius: 10px;
+            overflow: hidden;
+            margin: 15px 0;
+        }
+
+        .progress-fill {
+            background: #58cc02;
+            height: 100%;
+            width: 35%;
+            border-radius: 10px;
+            transition: width 0.5s;
+            box-shadow: 0 0 10px rgba(88, 204, 2, 0.5);
+        }
+
+        .progress-text {
+            font-size: 14px;
+            opacity: 0.9;
+        }
+
+        .skills-grid {
+            display: grid;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .skill-card {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            cursor: pointer;
+            transition: all 0.3s;
+            border: 2px solid transparent;
+        }
+
+        .skill-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            border-color: #58cc02;
+        }
+
+        .skill-card.locked {
+            opacity: 0.6;
+            cursor: not-allowed;
+        }
+
+        .skill-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #58cc02 0%, #89e219 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        .skill-card.locked .skill-icon {
+            background: #e5e5e5;
+        }
+
+        .skill-name {
+            font-size: 18px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .skill-progress {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Lesson Screen */
+        .lesson-header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .lesson-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .lesson-progress {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 30px;
+        }
+
+        .progress-dot {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background: #e5e5e5;
+            transition: all 0.3s;
+        }
+
+        .progress-dot.completed {
+            background: #58cc02;
+            transform: scale(1.2);
+        }
+
+        .progress-dot.current {
+            background: #ffc800;
+            transform: scale(1.3);
+        }
+
+        /* Exercise Types */
+        .exercise-container {
+            background: #f7f7f7;
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 20px;
+        }
+
+        .exercise-question {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 25px;
+            text-align: center;
+        }
+
+        .word-bank {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .word-chip {
+            background: white;
+            border: 2px solid #e5e5e5;
+            padding: 10px 20px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .word-chip:hover {
+            background: #f0f0f0;
+            transform: translateY(-2px);
+        }
+
+        .word-chip.selected {
+            background: #58cc02;
+            color: white;
+            border-color: #58cc02;
+        }
+
+        .answer-area {
+            min-height: 60px;
+            background: white;
+            border: 2px dashed #ccc;
+            border-radius: 10px;
+            padding: 15px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .answer-area .word-chip {
+            background: #58cc02;
+            color: white;
+            border-color: #58cc02;
+        }
+
+        /* Multiple Choice */
+        .options-list {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .option-card {
+            background: white;
+            border: 2px solid #e5e5e5;
+            border-radius: 12px;
+            padding: 18px;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .option-card:hover {
+            background: #f7f7f7;
+            transform: translateX(5px);
+        }
+
+        .option-card.selected {
+            border-color: #58cc02;
+            background: #e8f7e0;
+        }
+
+        .option-card.correct {
+            border-color: #58cc02;
+            background: #e8f7e0;
+        }
+
+        .option-card.incorrect {
+            border-color: #ff4b4b;
+            background: #ffe6e6;
+        }
+
+        .option-radio {
+            width: 20px;
+            height: 20px;
+            border: 2px solid #ccc;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .option-card.selected .option-radio {
+            border-color: #58cc02;
+            background: #58cc02;
+        }
+
+        .option-radio::after {
+            content: '';
+            width: 8px;
+            height: 8px;
+            background: white;
+            border-radius: 50%;
+            display: none;
+        }
+
+        .option-card.selected .option-radio::after {
+            display: block;
+        }
+
+        /* Matching Exercise */
+        .matching-container {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .matching-column {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .match-item {
+            background: white;
+            border: 2px solid #e5e5e5;
+            border-radius: 10px;
+            padding: 15px;
+            text-align: center;
+            cursor: pointer;
+            transition: all 0.2s;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .match-item:hover {
+            background: #f7f7f7;
+            transform: scale(1.05);
+        }
+
+        .match-item.selected {
+            border-color: #ffc800;
+            background: #fff7e0;
+        }
+
+        .match-item.matched {
+            border-color: #58cc02;
+            background: #e8f7e0;
+            pointer-events: none;
+            opacity: 0.7;
+        }
+
+        /* Action Buttons */
+        .action-buttons {
+            display: flex;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .btn {
+            flex: 1;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .btn-primary {
+            background: #58cc02;
+            color: white;
+            box-shadow: 0 4px 15px rgba(88, 204, 2, 0.3);
+        }
+
+        .btn-primary:hover {
+            background: #4cae00;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(88, 204, 2, 0.4);
+        }
+
+        .btn-primary:disabled {
+            background: #ccc;
+            cursor: not-allowed;
+            box-shadow: none;
+            transform: none;
+        }
+
+        .btn-secondary {
+            background: #e5e5e5;
+            color: #666;
+        }
+
+        .btn-secondary:hover {
+            background: #d0d0d0;
+        }
+
+        /* Profile Screen */
+        .profile-header {
+            text-align: center;
+            padding: 30px 0;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 0 0 30px 30px;
+            margin: -20px -20px 30px;
+        }
+
+        .avatar {
+            width: 100px;
+            height: 100px;
+            background: white;
+            border-radius: 50%;
+            margin: 0 auto 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .username {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 5px;
+        }
+
+        .user-level {
+            font-size: 16px;
+            opacity: 0.9;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+
+        .stat-card {
+            background: #f7f7f7;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .stat-value {
+            font-size: 32px;
+            font-weight: 700;
+            color: #58cc02;
+            margin-bottom: 5px;
+        }
+
+        .stat-label {
+            font-size: 14px;
+            color: #666;
+        }
+
+        .achievements-section {
+            margin-top: 30px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+        }
+
+        .achievement {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #ffc800 0%, #ff9a00 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            box-shadow: 0 4px 10px rgba(255, 200, 0, 0.3);
+        }
+
+        .achievement.locked {
+            background: #e5e5e5;
+            box-shadow: none;
+        }
+
+        /* Result Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.5);
+            z-index: 1000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            max-width: 400px;
+            width: 90%;
+            text-align: center;
+            animation: slideUp 0.3s;
+        }
+
+        @keyframes slideUp {
+            from { transform: translateY(100px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+        .result-icon {
+            width: 80px;
+            height: 80px;
+            margin: 0 auto 20px;
+            background: #58cc02;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 40px;
+        }
+
+        .result-icon.incorrect {
+            background: #ff4b4b;
+        }
+
+        .result-title {
+            font-size: 24px;
+            font-weight: 700;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .result-message {
+            font-size: 16px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+
+        .xp-earned {
+            background: #f7f7f7;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 20px;
+            font-size: 18px;
+            font-weight: 600;
+            color: #58cc02;
+        }
+
+        /* Responsive */
+        @media (max-width: 480px) {
+            .container {
+                max-width: 100%;
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <div class="header">
+            <h1>Duolingo</h1>
+            <div class="header-stats">
+                <div class="streak">
+                    <span>🔥</span>
+                    <span>7</span>
+                </div>
+                <div class="hearts">
+                    <span>❤️</span>
+                    <span>5</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Navigation -->
+        <div class="nav-tabs">
+            <button class="nav-tab active" data-screen="home">Learn</button>
+            <button class="nav-tab" data-screen="lessons">Lessons</button>
+            <button class="nav-tab" data-screen="profile">Profile</button>
+        </div>
+
+        <!-- Home Screen -->
+        <div class="screen active" id="home">
+            <div class="course-progress">
+                <div class="course-title">Spanish</div>
+                <div class="progress-text">Level 3 • 350 XP</div>
+                <div class="progress-bar">
+                    <div class="progress-fill"></div>
+                </div>
+                <div class="progress-text">35% Complete</div>
+            </div>
+
+            <div class="skills-grid">
+                <div class="skill-card" onclick="startLesson('basics')">
+                    <div class="skill-icon">👋</div>
+                    <div class="skill-name">Basics</div>
+                    <div class="skill-progress">5/5 Lessons</div>
+                </div>
+
+                <div class="skill-card" onclick="startLesson('greetings')">
+                    <div class="skill-icon">😊</div>
+                    <div class="skill-name">Greetings</div>
+                    <div class="skill-progress">3/5 Lessons</div>
+                </div>
+
+                <div class="skill-card" onclick="startLesson('food')">
+                    <div class="skill-icon">🍎</div>
+                    <div class="skill-name">Food</div>
+                    <div class="skill-progress">1/5 Lessons</div>
+                </div>
+
+                <div class="skill-card locked">
+                    <div class="skill-icon">🏠</div>
+                    <div class="skill-name">Family</div>
+                    <div class="skill-progress">Locked</div>
+                </div>
+
+                <div class="skill-card locked">
+                    <div class="skill-icon">🎨</div>
+                    <div class="skill-name">Colors</div>
+                    <div class="skill-progress">Locked</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Lessons Screen -->
+        <div class="screen" id="lessons">
+            <div class="lesson-header">
+                <h2 class="lesson-title">Spanish Basics</h2>
+                <div class="lesson-progress">
+                    <span class="progress-dot completed"></span>
+                    <span class="progress-dot current"></span>
+                    <span class="progress-dot"></span>
+                    <span class="progress-dot"></span>
+                    <span class="progress-dot"></span>
+                </div>
+            </div>
+
+            <!-- Translation Exercise -->
+            <div class="exercise-container" id="translation-exercise">
+                <div class="exercise-question">
+                    Translate: "The apple is red"
+                </div>
+                <div class="answer-area" id="answer-area"></div>
+                <div class="word-bank" id="word-bank">
+                    <div class="word-chip" data-word="La">La</div>
+                    <div class="word-chip" data-word="manzana">manzana</div>
+                    <div class="word-chip" data-word="es">es</div>
+                    <div class="word-chip" data-word="roja">roja</div>
+                    <div class="word-chip" data-word="El">El</div>
+                    <div class="word-chip" data-word="verde">verde</div>
+                </div>
+            </div>
+
+            <!-- Multiple Choice Exercise (Hidden by default) -->
+            <div class="exercise-container" id="multiple-choice-exercise" style="display: none;">
+                <div class="exercise-question">
+                    What does "Hola" mean?
+                </div>
+                <div class="options-list">
+                    <div class="option-card" data-answer="hello">
+                        <div class="option-radio"></div>
+                        <span>Hello</span>
+                    </div>
+                    <div class="option-card" data-answer="goodbye">
+                        <div class="option-radio"></div>
+                        <span>Goodbye</span>
+                    </div>
+                    <div class="option-card" data-answer="thanks">
+                        <div class="option-radio"></div>
+                        <span>Thanks</span>
+                    </div>
+                    <div class="option-card" data-answer="please">
+                        <div class="option-radio"></div>
+                        <span>Please</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Matching Exercise (Hidden by default) -->
+            <div class="exercise-container" id="matching-exercise" style="display: none;">
+                <div class="exercise-question">
+                    Match the pairs
+                </div>
+                <div class="matching-container">
+                    <div class="matching-column">
+                        <div class="match-item" data-pair="1">Cat</div>
+                        <div class="match-item" data-pair="2">Dog</div>
+                        <div class="match-item" data-pair="3">Bird</div>
+                    </div>
+                    <div class="matching-column">
+                        <div class="match-item" data-pair="2">Perro</div>
+                        <div class="match-item" data-pair="1">Gato</div>
+                        <div class="match-item" data-pair="3">Pájaro</div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn btn-secondary" onclick="skipExercise()">Skip</button>
+                <button class="btn btn-primary" onclick="checkAnswer()" id="check-btn">Check</button>
+            </div>
+        </div>
+
+        <!-- Profile Screen -->
+        <div class="screen" id="profile">
+            <div class="profile-header">
+                <div class="avatar">👤</div>
+                <div class="username">Language Learner</div>
+                <div class="user-level">Level 3 • Spanish</div>
+            </div>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-value">7</div>
+                    <div class="stat-label">Day Streak</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">350</div>
+                    <div class="stat-label">Total XP</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">42</div>
+                    <div class="stat-label">Lessons</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-value">156</div>
+                    <div class="stat-label">Words Learned</div>
+                </div>
+            </div>
+
+            <div class="achievements-section">
+                <h3 class="section-title">Achievements</h3>
+                <div class="achievements-grid">
+                    <div class="achievement">🏆</div>
+                    <div class="achievement">⭐</div>
+                    <div class="achievement">🎯</div>
+                    <div class="achievement locked">🔒</div>
+                    <div class="achievement locked">🔒</div>
+                    <div class="achievement locked">🔒</div>
+                    <div class="achievement locked">🔒</div>
+                    <div class="achievement locked">🔒</div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Result Modal -->
+    <div class="modal" id="result-modal">
+        <div class="modal-content">
+            <div class="result-icon" id="result-icon">✓</div>
+            <div class="result-title" id="result-title">Correct!</div>
+            <div class="result-message" id="result-message">Great job!</div>
+            <div class="xp-earned">+10 XP</div>
+            <button class="btn btn-primary" onclick="nextExercise()">Continue</button>
+        </div>
+    </div>
+
+    <script>
+        // Screen Navigation
+        const navTabs = document.querySelectorAll('.nav-tab');
+        const screens = document.querySelectorAll('.screen');
+
+        navTabs.forEach(tab => {
+            tab.addEventListener('click', () => {
+                const targetScreen = tab.dataset.screen;
+                
+                // Update active tab
+                navTabs.forEach(t => t.classList.remove('active'));
+                tab.classList.add('active');
+                
+                // Update active screen
+                screens.forEach(s => s.classList.remove('active'));
+                document.getElementById(targetScreen).classList.add('active');
+            });
+        });
+
+        // Exercise Management
+        let currentExercise = 0;
+        const exercises = ['translation', 'multiple-choice', 'matching'];
+        let currentExerciseType = exercises[0];
+
+        function startLesson(skillName) {
+            // Switch to lessons screen
+            navTabs.forEach(t => t.classList.remove('active'));
+            document.querySelector('[data-screen="lessons"]').classList.add('active');
+            
+            screens.forEach(s => s.classList.remove('active'));
+            document.getElementById('lessons').classList.add('active');
+            
+            // Reset exercise
+            currentExercise = 0;
+            showExercise(exercises[0]);
+        }
+
+        function showExercise(type) {
+            // Hide all exercises
+            document.getElementById('translation-exercise').style.display = 'none';
+            document.getElementById('multiple-choice-exercise').style.display = 'none';
+            document.getElementById('matching-exercise').style.display = 'none';
+            
+            // Show current exercise
+            document.getElementById(`${type}-exercise`).style.display = 'block';
+            currentExerciseType = type;
+            
+            // Reset check button
+            const checkBtn = document.getElementById('check-btn');
+            checkBtn.disabled = false;
+            checkBtn.textContent = 'Check';
+        }
+
+        // Translation Exercise
+        const wordChips = document.querySelectorAll('.word-chip');
+        const answerArea = document.getElementById('answer-area');
+        let selectedWords = [];
+
+        wordChips.forEach(chip => {
+            chip.addEventListener('click', () => {
+                if (chip.parentElement.id === 'word-bank') {
+                    // Move to answer area
+                    selectedWords.push(chip.dataset.word);
+                    answerArea.appendChild(chip);
+                } else {
+                    // Move back to word bank
+                    const index = selectedWords.indexOf(chip.dataset.word);
+                    if (index > -1) selectedWords.splice(index, 1);
+                    document.getElementById('word-bank').appendChild(chip);
+                }
+            });
+        });
+
+        // Multiple Choice Exercise
+        const optionCards = document.querySelectorAll('.option-card');
+        let selectedOption = null;
+
+        optionCards.forEach(card => {
+            card.addEventListener('click', () => {
+                optionCards.forEach(c => c.classList.remove('selected'));
+                card.classList.add('selected');
+                selectedOption = card.dataset.answer;
+            });
+        });
+
+        // Matching Exercise
+        let selectedMatch = null;
+        let matchedPairs = [];
+        const matchItems = document.querySelectorAll('.match-item');
+
+        matchItems.forEach(item => {
+            item.addEventListener('click', () => {
+                if (item.classList.contains('matched')) return;
+                
+                if (!selectedMatch) {
+                    selectedMatch = item;
+                    item.classList.add('selected');
+                } else {
+                    if (selectedMatch.dataset.pair === item.dataset.pair) {
+                        // Correct match
+                        selectedMatch.classList.remove('selected');
+                        selectedMatch.classList.add('matched');
+                        item.classList.add('matched');
+                        matchedPairs.push(selectedMatch.dataset.pair);
+                    } else {
+                        // Wrong match
+                        selectedMatch.classList.remove('selected');
+                    }
+                    selectedMatch = null;
+                }
+            });
+        });
+
+        // Check Answer
+        function checkAnswer() {
+            let isCorrect = false;
+            
+            if (currentExerciseType === 'translation') {
+                const correctAnswer = ['La', 'manzana', 'es', 'roja'];
+                isCorrect = JSON.stringify(selectedWords) === JSON.stringify(correctAnswer);
+            } else if (currentExerciseType === 'multiple-choice') {
+                isCorrect = selectedOption === 'hello';
+            } else if (currentExerciseType === 'matching') {
+                isCorrect = matchedPairs.length === 3;
+            }
+            
+            showResult(isCorrect);
+        }
+
+        // Show Result Modal
+        function showResult(isCorrect) {
+            const modal = document.getElementById('result-modal');
+            const icon = document.getElementById('result-icon');
+            const title = document.getElementById('result-title');
+            const message = document.getElementById('result-message');
+            
+            if (isCorrect) {
+                icon.innerHTML = '✓';
+                icon.classList.remove('incorrect');
+                title.textContent = 'Correct!';
+                message.textContent = 'Great job! Keep it up!';
+            } else {
+                icon.innerHTML = '✗';
+                icon.classList.add('incorrect');
+                title.textContent = 'Not quite!';
+                message.textContent = 'Try again next time!';
+            }
+            
+            modal.classList.add('active');
+        }
+
+        // Next Exercise
+        function nextExercise() {
+            const modal = document.getElementById('result-modal');
+            modal.classList.remove('active');
+            
+            // Update progress dots
+            const dots = document.querySelectorAll('.progress-dot');
+            if (currentExercise < dots.length) {
+                dots[currentExercise].classList.remove('current');
+                dots[currentExercise].classList.add('completed');
+                currentExercise++;
+                
+                if (currentExercise < dots.length) {
+                    dots[currentExercise].classList.add('current');
+                }
+            }
+            
+            // Cycle through exercises
+            const nextIndex = (exercises.indexOf(currentExerciseType) + 1) % exercises.length;
+            
+            // Reset exercises
+            if (currentExerciseType === 'translation') {
+                selectedWords = [];
+                answerArea.innerHTML = '';
+                document.querySelectorAll('.word-chip').forEach(chip => {
+                    document.getElementById('word-bank').appendChild(chip);
+                });
+            } else if (currentExerciseType === 'multiple-choice') {
+                optionCards.forEach(c => c.classList.remove('selected', 'correct', 'incorrect'));
+                selectedOption = null;
+            } else if (currentExerciseType === 'matching') {
+                matchItems.forEach(item => item.classList.remove('selected', 'matched'));
+                selectedMatch = null;
+                matchedPairs = [];
+            }
+            
+            if (currentExercise >= dots.length) {
+                // Lesson complete, go back to home
+                navTabs.forEach(t => t.classList.remove('active'));
+                document.querySelector('[data-screen="home"]').classList.add('active');
+                screens.forEach(s => s.classList.remove('active'));
+                document.getElementById('home').classList.add('active');
+                
+                // Reset for next lesson
+                currentExercise = 0;
+                dots.forEach(dot => {
+                    dot.classList.remove('completed', 'current');
+                });
+                dots[0].classList.add('current');
+            } else {
+                showExercise(exercises[nextIndex]);
+            }
+        }
+
+        // Skip Exercise
+        function skipExercise() {
+            nextExercise();
+        }
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', () => {
+            // Set initial exercise
+            showExercise('translation');
+        });
+    </script>
+</body>
+</html>
