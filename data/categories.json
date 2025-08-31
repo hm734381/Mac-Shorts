@@ -1,0 +1,190 @@
+{
+  "categories": [
+    {
+      "id": "general",
+      "name": "General",
+      "icon": "Settings",
+      "description": "Essential system-wide shortcuts for everyday use",
+      "shortcutIds": [
+        "general-copy",
+        "general-cut",
+        "general-paste",
+        "general-undo",
+        "general-redo",
+        "general-select-all",
+        "general-find",
+        "general-find-next",
+        "general-find-previous",
+        "general-save",
+        "general-save-as",
+        "general-print",
+        "general-open",
+        "general-close",
+        "general-quit",
+        "general-new-window",
+        "general-new-tab",
+        "general-preferences",
+        "general-hide",
+        "general-hide-others",
+        "general-force-quit"
+      ],
+      "order": 1
+    },
+    {
+      "id": "finder",
+      "name": "Finder",
+      "icon": "Folder",
+      "description": "Navigate and manage files in Finder",
+      "shortcutIds": [
+        "finder-new-folder",
+        "finder-duplicate",
+        "finder-get-info",
+        "finder-show-view-options",
+        "finder-go-to-folder",
+        "finder-connect-server",
+        "finder-empty-trash",
+        "finder-quick-look",
+        "finder-show-path-bar",
+        "finder-show-sidebar",
+        "finder-show-toolbar",
+        "finder-go-home",
+        "finder-go-desktop",
+        "finder-go-applications",
+        "finder-go-utilities"
+      ],
+      "order": 2
+    },
+    {
+      "id": "screenshots",
+      "name": "Screenshots",
+      "icon": "Camera",
+      "description": "Capture your screen in various ways",
+      "shortcutIds": [
+        "screenshot-full",
+        "screenshot-selection",
+        "screenshot-window",
+        "screenshot-controls",
+        "screenshot-full-clipboard",
+        "screenshot-selection-clipboard",
+        "screenshot-touchbar"
+      ],
+      "order": 3
+    },
+    {
+      "id": "window-management",
+      "name": "Window Management",
+      "icon": "Square",
+      "description": "Control window placement and behavior",
+      "shortcutIds": [
+        "window-minimize",
+        "window-minimize-all",
+        "window-zoom",
+        "window-fullscreen",
+        "window-mission-control",
+        "window-app-windows",
+        "window-show-desktop",
+        "window-switch-windows",
+        "window-switch-apps",
+        "window-switch-apps-reverse",
+        "window-move-left-space",
+        "window-move-right-space",
+        "window-space-number"
+      ],
+      "order": 4
+    },
+    {
+      "id": "text-editing",
+      "name": "Text Editing",
+      "icon": "Type",
+      "description": "Advanced text manipulation shortcuts",
+      "shortcutIds": [
+        "text-move-word-left",
+        "text-move-word-right",
+        "text-move-line-start",
+        "text-move-line-end",
+        "text-move-doc-start",
+        "text-move-doc-end",
+        "text-select-word-left",
+        "text-select-word-right",
+        "text-select-line-start",
+        "text-select-line-end",
+        "text-delete-word-left",
+        "text-delete-word-right",
+        "text-delete-line",
+        "text-emoji-symbols",
+        "text-spelling",
+        "text-page-up",
+        "text-page-down",
+        "text-select-all-above",
+        "text-select-all-below"
+      ],
+      "order": 5
+    },
+    {
+      "id": "accessibility",
+      "name": "Accessibility",
+      "icon": "Accessibility",
+      "description": "Shortcuts for accessibility features",
+      "shortcutIds": [
+        "accessibility-voiceover",
+        "accessibility-zoom-in",
+        "accessibility-zoom-out",
+        "accessibility-zoom-toggle",
+        "accessibility-invert-colors",
+        "accessibility-increase-contrast",
+        "accessibility-decrease-contrast"
+      ],
+      "order": 6
+    },
+    {
+      "id": "system",
+      "name": "System",
+      "icon": "Computer",
+      "description": "System control and management shortcuts",
+      "shortcutIds": [
+        "system-spotlight",
+        "system-notification-center",
+        "system-sleep",
+        "system-lock-screen",
+        "system-logout",
+        "system-restart",
+        "system-shutdown"
+      ],
+      "order": 7
+    },
+    {
+      "id": "safari",
+      "name": "Safari",
+      "icon": "Globe",
+      "description": "Safari browser shortcuts",
+      "shortcutIds": [
+        "safari-new-tab",
+        "safari-close-tab",
+        "safari-reopen-tab",
+        "safari-next-tab",
+        "safari-previous-tab",
+        "safari-reload",
+        "safari-back",
+        "safari-forward",
+        "safari-bookmark",
+        "safari-downloads"
+      ],
+      "order": 8
+    },
+    {
+      "id": "mail",
+      "name": "Mail",
+      "icon": "Mail",
+      "description": "Mail application shortcuts",
+      "shortcutIds": [
+        "mail-new-message",
+        "mail-reply",
+        "mail-reply-all",
+        "mail-forward",
+        "mail-send",
+        "mail-delete"
+      ],
+      "order": 9
+    }
+  ]
+}

@@ -1,0 +1,1476 @@
+{
+  "shortcuts": [
+    {
+      "id": "general-copy",
+      "category": "general",
+      "name": "Copy",
+      "description": "Copy selected item to clipboard",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "C",
+        "displayFormat": "⌘C"
+      },
+      "difficulty": "beginner",
+      "tags": ["clipboard", "editing", "essential"],
+      "frequency": "common"
+    },
+    {
+      "id": "general-cut",
+      "category": "general",
+      "name": "Cut",
+      "description": "Cut selected item to clipboard",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "X",
+        "displayFormat": "⌘X"
+      },
+      "difficulty": "beginner",
+      "tags": ["clipboard", "editing", "essential"],
+      "frequency": "common"
+    },
+    {
+      "id": "general-paste",
+      "category": "general",
+      "name": "Paste",
+      "description": "Paste from clipboard",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "V",
+        "displayFormat": "⌘V"
+      },
+      "difficulty": "beginner",
+      "tags": ["clipboard", "editing", "essential"],
+      "frequency": "common"
+    },
+    {
+      "id": "general-undo",
+      "category": "general",
+      "name": "Undo",
+      "description": "Undo last action",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "Z",
+        "displayFormat": "⌘Z"
+      },
+      "difficulty": "beginner",
+      "tags": ["editing", "essential"],
+      "frequency": "common"
+    },
+    {
+      "id": "general-redo",
+      "category": "general",
+      "name": "Redo",
+      "description": "Redo last undone action",
+      "keys": {
+        "modifiers": ["cmd", "shift"],
+        "key": "Z",
+        "displayFormat": "⌘⇧Z"
+      },
+      "difficulty": "beginner",
+      "tags": ["editing", "essential"],
+      "frequency": "common"
+    },
+    {
+      "id": "general-select-all",
+      "category": "general",
+      "name": "Select All",
+      "description": "Select all items or text",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "A",
+        "displayFormat": "⌘A"
+      },
+      "difficulty": "beginner",
+      "tags": ["selection", "essential"],
+      "frequency": "common"
+    },
+    {
+      "id": "general-find",
+      "category": "general",
+      "name": "Find",
+      "description": "Open find dialog",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "F",
+        "displayFormat": "⌘F"
+      },
+      "difficulty": "beginner",
+      "tags": ["search", "navigation", "essential"],
+      "frequency": "common"
+    },
+    {
+      "id": "general-find-next",
+      "category": "general",
+      "name": "Find Next",
+      "description": "Find next occurrence",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "G",
+        "displayFormat": "⌘G"
+      },
+      "difficulty": "intermediate",
+      "tags": ["search", "navigation"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "general-find-previous",
+      "category": "general",
+      "name": "Find Previous",
+      "description": "Find previous occurrence",
+      "keys": {
+        "modifiers": ["cmd", "shift"],
+        "key": "G",
+        "displayFormat": "⌘⇧G"
+      },
+      "difficulty": "intermediate",
+      "tags": ["search", "navigation"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "general-save",
+      "category": "general",
+      "name": "Save",
+      "description": "Save current document",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "S",
+        "displayFormat": "⌘S"
+      },
+      "difficulty": "beginner",
+      "tags": ["file", "essential"],
+      "frequency": "common"
+    },
+    {
+      "id": "general-save-as",
+      "category": "general",
+      "name": "Save As",
+      "description": "Save with a new name or location",
+      "keys": {
+        "modifiers": ["cmd", "shift"],
+        "key": "S",
+        "displayFormat": "⌘⇧S"
+      },
+      "difficulty": "beginner",
+      "tags": ["file"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "general-print",
+      "category": "general",
+      "name": "Print",
+      "description": "Print current document",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "P",
+        "displayFormat": "⌘P"
+      },
+      "difficulty": "beginner",
+      "tags": ["file", "output"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "general-open",
+      "category": "general",
+      "name": "Open",
+      "description": "Open a file",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "O",
+        "displayFormat": "⌘O"
+      },
+      "difficulty": "beginner",
+      "tags": ["file", "navigation"],
+      "frequency": "common"
+    },
+    {
+      "id": "general-close",
+      "category": "general",
+      "name": "Close Window",
+      "description": "Close current window",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "W",
+        "displayFormat": "⌘W"
+      },
+      "difficulty": "beginner",
+      "tags": ["window", "navigation"],
+      "frequency": "common"
+    },
+    {
+      "id": "general-quit",
+      "category": "general",
+      "name": "Quit Application",
+      "description": "Quit current application",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "Q",
+        "displayFormat": "⌘Q"
+      },
+      "difficulty": "beginner",
+      "tags": ["application", "essential"],
+      "frequency": "common"
+    },
+    {
+      "id": "general-new-window",
+      "category": "general",
+      "name": "New Window",
+      "description": "Open a new window",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "N",
+        "displayFormat": "⌘N"
+      },
+      "difficulty": "beginner",
+      "tags": ["window", "navigation"],
+      "frequency": "common"
+    },
+    {
+      "id": "general-new-tab",
+      "category": "general",
+      "name": "New Tab",
+      "description": "Open a new tab",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "T",
+        "displayFormat": "⌘T"
+      },
+      "difficulty": "beginner",
+      "tags": ["tab", "navigation"],
+      "frequency": "common"
+    },
+    {
+      "id": "general-preferences",
+      "category": "general",
+      "name": "Preferences",
+      "description": "Open application preferences",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": ",",
+        "displayFormat": "⌘,"
+      },
+      "difficulty": "beginner",
+      "tags": ["settings", "application"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "general-hide",
+      "category": "general",
+      "name": "Hide Application",
+      "description": "Hide current application",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "H",
+        "displayFormat": "⌘H"
+      },
+      "difficulty": "intermediate",
+      "tags": ["application", "window"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "general-hide-others",
+      "category": "general",
+      "name": "Hide Others",
+      "description": "Hide all other applications",
+      "keys": {
+        "modifiers": ["cmd", "option"],
+        "key": "H",
+        "displayFormat": "⌘⌥H"
+      },
+      "difficulty": "intermediate",
+      "tags": ["application", "window"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "general-force-quit",
+      "category": "general",
+      "name": "Force Quit",
+      "description": "Open Force Quit Applications window",
+      "keys": {
+        "modifiers": ["cmd", "option"],
+        "key": "Escape",
+        "displayFormat": "⌘⌥Esc"
+      },
+      "difficulty": "intermediate",
+      "tags": ["application", "troubleshooting"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "finder-new-folder",
+      "category": "finder",
+      "name": "New Folder",
+      "description": "Create a new folder",
+      "keys": {
+        "modifiers": ["cmd", "shift"],
+        "key": "N",
+        "displayFormat": "⌘⇧N"
+      },
+      "difficulty": "beginner",
+      "tags": ["finder", "file-management"],
+      "frequency": "common"
+    },
+    {
+      "id": "finder-duplicate",
+      "category": "finder",
+      "name": "Duplicate",
+      "description": "Duplicate selected item",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "D",
+        "displayFormat": "⌘D"
+      },
+      "difficulty": "beginner",
+      "tags": ["finder", "file-management"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "finder-get-info",
+      "category": "finder",
+      "name": "Get Info",
+      "description": "Show info for selected item",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "I",
+        "displayFormat": "⌘I"
+      },
+      "difficulty": "beginner",
+      "tags": ["finder", "file-info"],
+      "frequency": "common"
+    },
+    {
+      "id": "finder-show-view-options",
+      "category": "finder",
+      "name": "Show View Options",
+      "description": "Show view options for current window",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "J",
+        "displayFormat": "⌘J"
+      },
+      "difficulty": "intermediate",
+      "tags": ["finder", "view"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "finder-go-to-folder",
+      "category": "finder",
+      "name": "Go to Folder",
+      "description": "Go to a specific folder path",
+      "keys": {
+        "modifiers": ["cmd", "shift"],
+        "key": "G",
+        "displayFormat": "⌘⇧G"
+      },
+      "difficulty": "intermediate",
+      "tags": ["finder", "navigation"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "finder-connect-server",
+      "category": "finder",
+      "name": "Connect to Server",
+      "description": "Connect to a network server",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "K",
+        "displayFormat": "⌘K"
+      },
+      "difficulty": "advanced",
+      "tags": ["finder", "network"],
+      "frequency": "rare"
+    },
+    {
+      "id": "finder-empty-trash",
+      "category": "finder",
+      "name": "Empty Trash",
+      "description": "Empty the trash",
+      "keys": {
+        "modifiers": ["cmd", "shift"],
+        "key": "Delete",
+        "displayFormat": "⌘⇧⌫"
+      },
+      "difficulty": "beginner",
+      "tags": ["finder", "file-management"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "finder-quick-look",
+      "category": "finder",
+      "name": "Quick Look",
+      "description": "Preview selected file",
+      "keys": {
+        "modifiers": [],
+        "key": "Space",
+        "displayFormat": "Space"
+      },
+      "difficulty": "beginner",
+      "tags": ["finder", "preview"],
+      "frequency": "common"
+    },
+    {
+      "id": "finder-show-path-bar",
+      "category": "finder",
+      "name": "Show/Hide Path Bar",
+      "description": "Toggle path bar visibility",
+      "keys": {
+        "modifiers": ["cmd", "option"],
+        "key": "P",
+        "displayFormat": "⌘⌥P"
+      },
+      "difficulty": "intermediate",
+      "tags": ["finder", "view"],
+      "frequency": "rare"
+    },
+    {
+      "id": "finder-show-sidebar",
+      "category": "finder",
+      "name": "Show/Hide Sidebar",
+      "description": "Toggle sidebar visibility",
+      "keys": {
+        "modifiers": ["cmd", "option"],
+        "key": "S",
+        "displayFormat": "⌘⌥S"
+      },
+      "difficulty": "intermediate",
+      "tags": ["finder", "view"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "finder-show-toolbar",
+      "category": "finder",
+      "name": "Show/Hide Toolbar",
+      "description": "Toggle toolbar visibility",
+      "keys": {
+        "modifiers": ["cmd", "option"],
+        "key": "T",
+        "displayFormat": "⌘⌥T"
+      },
+      "difficulty": "intermediate",
+      "tags": ["finder", "view"],
+      "frequency": "rare"
+    },
+    {
+      "id": "finder-go-home",
+      "category": "finder",
+      "name": "Go to Home Folder",
+      "description": "Navigate to home folder",
+      "keys": {
+        "modifiers": ["cmd", "shift"],
+        "key": "H",
+        "displayFormat": "⌘⇧H"
+      },
+      "difficulty": "beginner",
+      "tags": ["finder", "navigation"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "finder-go-desktop",
+      "category": "finder",
+      "name": "Go to Desktop",
+      "description": "Navigate to desktop",
+      "keys": {
+        "modifiers": ["cmd", "shift"],
+        "key": "D",
+        "displayFormat": "⌘⇧D"
+      },
+      "difficulty": "beginner",
+      "tags": ["finder", "navigation"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "finder-go-applications",
+      "category": "finder",
+      "name": "Go to Applications",
+      "description": "Navigate to Applications folder",
+      "keys": {
+        "modifiers": ["cmd", "shift"],
+        "key": "A",
+        "displayFormat": "⌘⇧A"
+      },
+      "difficulty": "beginner",
+      "tags": ["finder", "navigation"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "finder-go-utilities",
+      "category": "finder",
+      "name": "Go to Utilities",
+      "description": "Navigate to Utilities folder",
+      "keys": {
+        "modifiers": ["cmd", "shift"],
+        "key": "U",
+        "displayFormat": "⌘⇧U"
+      },
+      "difficulty": "intermediate",
+      "tags": ["finder", "navigation"],
+      "frequency": "rare"
+    },
+    {
+      "id": "screenshot-full",
+      "category": "screenshots",
+      "name": "Screenshot Full Screen",
+      "description": "Take a screenshot of the entire screen",
+      "keys": {
+        "modifiers": ["cmd", "shift"],
+        "key": "3",
+        "displayFormat": "⌘⇧3"
+      },
+      "difficulty": "beginner",
+      "tags": ["screenshot", "capture"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "screenshot-selection",
+      "category": "screenshots",
+      "name": "Screenshot Selection",
+      "description": "Take a screenshot of selected area",
+      "keys": {
+        "modifiers": ["cmd", "shift"],
+        "key": "4",
+        "displayFormat": "⌘⇧4"
+      },
+      "difficulty": "beginner",
+      "tags": ["screenshot", "capture"],
+      "frequency": "common"
+    },
+    {
+      "id": "screenshot-window",
+      "category": "screenshots",
+      "name": "Screenshot Window",
+      "description": "Take a screenshot of a window (press Space after ⌘⇧4)",
+      "keys": {
+        "modifiers": ["cmd", "shift"],
+        "key": "4 then Space",
+        "displayFormat": "⌘⇧4 Space"
+      },
+      "difficulty": "intermediate",
+      "tags": ["screenshot", "capture", "window"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "screenshot-controls",
+      "category": "screenshots",
+      "name": "Screenshot Controls",
+      "description": "Open screenshot controls interface",
+      "keys": {
+        "modifiers": ["cmd", "shift"],
+        "key": "5",
+        "displayFormat": "⌘⇧5"
+      },
+      "difficulty": "beginner",
+      "tags": ["screenshot", "capture", "recording"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "screenshot-full-clipboard",
+      "category": "screenshots",
+      "name": "Screenshot Full to Clipboard",
+      "description": "Copy full screen screenshot to clipboard",
+      "keys": {
+        "modifiers": ["cmd", "ctrl", "shift"],
+        "key": "3",
+        "displayFormat": "⌘⌃⇧3"
+      },
+      "difficulty": "intermediate",
+      "tags": ["screenshot", "clipboard"],
+      "frequency": "rare"
+    },
+    {
+      "id": "screenshot-selection-clipboard",
+      "category": "screenshots",
+      "name": "Screenshot Selection to Clipboard",
+      "description": "Copy selected area screenshot to clipboard",
+      "keys": {
+        "modifiers": ["cmd", "ctrl", "shift"],
+        "key": "4",
+        "displayFormat": "⌘⌃⇧4"
+      },
+      "difficulty": "intermediate",
+      "tags": ["screenshot", "clipboard"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "screenshot-touchbar",
+      "category": "screenshots",
+      "name": "Screenshot Touch Bar",
+      "description": "Take a screenshot of the Touch Bar",
+      "keys": {
+        "modifiers": ["cmd", "shift"],
+        "key": "6",
+        "displayFormat": "⌘⇧6"
+      },
+      "difficulty": "advanced",
+      "tags": ["screenshot", "touchbar"],
+      "frequency": "rare"
+    },
+    {
+      "id": "window-minimize",
+      "category": "window-management",
+      "name": "Minimize Window",
+      "description": "Minimize the current window to Dock",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "M",
+        "displayFormat": "⌘M"
+      },
+      "difficulty": "beginner",
+      "tags": ["window", "dock"],
+      "frequency": "common"
+    },
+    {
+      "id": "window-minimize-all",
+      "category": "window-management",
+      "name": "Minimize All",
+      "description": "Minimize all windows of current app",
+      "keys": {
+        "modifiers": ["cmd", "option"],
+        "key": "M",
+        "displayFormat": "⌘⌥M"
+      },
+      "difficulty": "intermediate",
+      "tags": ["window", "dock"],
+      "frequency": "rare"
+    },
+    {
+      "id": "window-fullscreen",
+      "category": "window-management",
+      "name": "Enter Full Screen",
+      "description": "Toggle full screen mode",
+      "keys": {
+        "modifiers": ["ctrl", "cmd"],
+        "key": "F",
+        "displayFormat": "⌃⌘F"
+      },
+      "difficulty": "beginner",
+      "tags": ["window", "view"],
+      "frequency": "common"
+    },
+    {
+      "id": "window-mission-control",
+      "category": "window-management",
+      "name": "Mission Control",
+      "description": "Show all windows and spaces",
+      "keys": {
+        "modifiers": ["ctrl"],
+        "key": "Up",
+        "displayFormat": "⌃↑"
+      },
+      "difficulty": "intermediate",
+      "tags": ["window", "spaces", "navigation"],
+      "frequency": "common"
+    },
+    {
+      "id": "window-app-windows",
+      "category": "window-management",
+      "name": "App Windows",
+      "description": "Show all windows of current app",
+      "keys": {
+        "modifiers": ["ctrl"],
+        "key": "Down",
+        "displayFormat": "⌃↓"
+      },
+      "difficulty": "intermediate",
+      "tags": ["window", "navigation"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "window-show-desktop",
+      "category": "window-management",
+      "name": "Show Desktop",
+      "description": "Show desktop by moving all windows",
+      "keys": {
+        "modifiers": [],
+        "key": "F11",
+        "displayFormat": "F11"
+      },
+      "difficulty": "beginner",
+      "tags": ["window", "desktop"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "window-switch-windows",
+      "category": "window-management",
+      "name": "Switch Windows",
+      "description": "Switch between windows of current app",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "`",
+        "displayFormat": "⌘`"
+      },
+      "difficulty": "intermediate",
+      "tags": ["window", "navigation"],
+      "frequency": "common"
+    },
+    {
+      "id": "window-switch-apps",
+      "category": "window-management",
+      "name": "Switch Apps",
+      "description": "Switch between open applications",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "Tab",
+        "displayFormat": "⌘Tab"
+      },
+      "difficulty": "beginner",
+      "tags": ["application", "navigation"],
+      "frequency": "common"
+    },
+    {
+      "id": "window-switch-apps-reverse",
+      "category": "window-management",
+      "name": "Switch Apps Reverse",
+      "description": "Switch between apps in reverse order",
+      "keys": {
+        "modifiers": ["cmd", "shift"],
+        "key": "Tab",
+        "displayFormat": "⌘⇧Tab"
+      },
+      "difficulty": "intermediate",
+      "tags": ["application", "navigation"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "window-move-left-space",
+      "category": "window-management",
+      "name": "Move to Left Space",
+      "description": "Move to space on the left",
+      "keys": {
+        "modifiers": ["ctrl"],
+        "key": "Left",
+        "displayFormat": "⌃←"
+      },
+      "difficulty": "intermediate",
+      "tags": ["spaces", "navigation"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "window-move-right-space",
+      "category": "window-management",
+      "name": "Move to Right Space",
+      "description": "Move to space on the right",
+      "keys": {
+        "modifiers": ["ctrl"],
+        "key": "Right",
+        "displayFormat": "⌃→"
+      },
+      "difficulty": "intermediate",
+      "tags": ["spaces", "navigation"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "window-space-number",
+      "category": "window-management",
+      "name": "Switch to Space Number",
+      "description": "Switch directly to a numbered space",
+      "keys": {
+        "modifiers": ["ctrl"],
+        "key": "1-9",
+        "displayFormat": "⌃1-9"
+      },
+      "difficulty": "advanced",
+      "tags": ["spaces", "navigation"],
+      "frequency": "rare"
+    },
+    {
+      "id": "text-move-word-left",
+      "category": "text-editing",
+      "name": "Move Word Left",
+      "description": "Move cursor one word to the left",
+      "keys": {
+        "modifiers": ["option"],
+        "key": "Left",
+        "displayFormat": "⌥←"
+      },
+      "difficulty": "intermediate",
+      "tags": ["text", "cursor", "navigation"],
+      "frequency": "common"
+    },
+    {
+      "id": "text-move-word-right",
+      "category": "text-editing",
+      "name": "Move Word Right",
+      "description": "Move cursor one word to the right",
+      "keys": {
+        "modifiers": ["option"],
+        "key": "Right",
+        "displayFormat": "⌥→"
+      },
+      "difficulty": "intermediate",
+      "tags": ["text", "cursor", "navigation"],
+      "frequency": "common"
+    },
+    {
+      "id": "text-move-line-start",
+      "category": "text-editing",
+      "name": "Move to Line Start",
+      "description": "Move cursor to beginning of line",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "Left",
+        "displayFormat": "⌘←"
+      },
+      "difficulty": "beginner",
+      "tags": ["text", "cursor", "navigation"],
+      "frequency": "common"
+    },
+    {
+      "id": "text-move-line-end",
+      "category": "text-editing",
+      "name": "Move to Line End",
+      "description": "Move cursor to end of line",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "Right",
+        "displayFormat": "⌘→"
+      },
+      "difficulty": "beginner",
+      "tags": ["text", "cursor", "navigation"],
+      "frequency": "common"
+    },
+    {
+      "id": "text-move-doc-start",
+      "category": "text-editing",
+      "name": "Move to Document Start",
+      "description": "Move cursor to beginning of document",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "Up",
+        "displayFormat": "⌘↑"
+      },
+      "difficulty": "intermediate",
+      "tags": ["text", "cursor", "navigation"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "text-move-doc-end",
+      "category": "text-editing",
+      "name": "Move to Document End",
+      "description": "Move cursor to end of document",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "Down",
+        "displayFormat": "⌘↓"
+      },
+      "difficulty": "intermediate",
+      "tags": ["text", "cursor", "navigation"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "text-select-word-left",
+      "category": "text-editing",
+      "name": "Select Word Left",
+      "description": "Select one word to the left",
+      "keys": {
+        "modifiers": ["shift", "option"],
+        "key": "Left",
+        "displayFormat": "⇧⌥←"
+      },
+      "difficulty": "intermediate",
+      "tags": ["text", "selection"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "text-select-word-right",
+      "category": "text-editing",
+      "name": "Select Word Right",
+      "description": "Select one word to the right",
+      "keys": {
+        "modifiers": ["shift", "option"],
+        "key": "Right",
+        "displayFormat": "⇧⌥→"
+      },
+      "difficulty": "intermediate",
+      "tags": ["text", "selection"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "text-select-line-start",
+      "category": "text-editing",
+      "name": "Select to Line Start",
+      "description": "Select from cursor to beginning of line",
+      "keys": {
+        "modifiers": ["shift", "cmd"],
+        "key": "Left",
+        "displayFormat": "⇧⌘←"
+      },
+      "difficulty": "intermediate",
+      "tags": ["text", "selection"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "text-select-line-end",
+      "category": "text-editing",
+      "name": "Select to Line End",
+      "description": "Select from cursor to end of line",
+      "keys": {
+        "modifiers": ["shift", "cmd"],
+        "key": "Right",
+        "displayFormat": "⇧⌘→"
+      },
+      "difficulty": "intermediate",
+      "tags": ["text", "selection"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "text-delete-word-left",
+      "category": "text-editing",
+      "name": "Delete Word Left",
+      "description": "Delete word to the left of cursor",
+      "keys": {
+        "modifiers": ["option"],
+        "key": "Delete",
+        "displayFormat": "⌥⌫"
+      },
+      "difficulty": "intermediate",
+      "tags": ["text", "deletion", "editing"],
+      "frequency": "common"
+    },
+    {
+      "id": "text-delete-word-right",
+      "category": "text-editing",
+      "name": "Delete Word Right",
+      "description": "Delete word to the right of cursor",
+      "keys": {
+        "modifiers": ["option"],
+        "key": "Fn+Delete",
+        "displayFormat": "⌥Fn⌫"
+      },
+      "difficulty": "advanced",
+      "tags": ["text", "deletion", "editing"],
+      "frequency": "rare"
+    },
+    {
+      "id": "text-delete-line",
+      "category": "text-editing",
+      "name": "Delete to Line Start",
+      "description": "Delete from cursor to beginning of line",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "Delete",
+        "displayFormat": "⌘⌫"
+      },
+      "difficulty": "advanced",
+      "tags": ["text", "deletion", "editing"],
+      "frequency": "rare"
+    },
+    {
+      "id": "text-emoji-symbols",
+      "category": "text-editing",
+      "name": "Emoji & Symbols",
+      "description": "Open emoji and symbols picker",
+      "keys": {
+        "modifiers": ["ctrl", "cmd"],
+        "key": "Space",
+        "displayFormat": "⌃⌘Space"
+      },
+      "difficulty": "beginner",
+      "tags": ["text", "emoji", "input"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "text-spelling",
+      "category": "text-editing",
+      "name": "Check Spelling",
+      "description": "Check document spelling",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": ";",
+        "displayFormat": "⌘;"
+      },
+      "difficulty": "intermediate",
+      "tags": ["text", "spelling"],
+      "frequency": "rare"
+    },
+    {
+      "id": "accessibility-voiceover",
+      "category": "accessibility",
+      "name": "VoiceOver",
+      "description": "Toggle VoiceOver on/off",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "F5",
+        "displayFormat": "⌘F5"
+      },
+      "difficulty": "intermediate",
+      "tags": ["accessibility", "voiceover"],
+      "frequency": "rare"
+    },
+    {
+      "id": "accessibility-zoom-in",
+      "category": "accessibility",
+      "name": "Zoom In",
+      "description": "Zoom in screen",
+      "keys": {
+        "modifiers": ["cmd", "option"],
+        "key": "=",
+        "displayFormat": "⌘⌥="
+      },
+      "difficulty": "intermediate",
+      "tags": ["accessibility", "zoom", "display"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "accessibility-zoom-out",
+      "category": "accessibility",
+      "name": "Zoom Out",
+      "description": "Zoom out screen",
+      "keys": {
+        "modifiers": ["cmd", "option"],
+        "key": "-",
+        "displayFormat": "⌘⌥-"
+      },
+      "difficulty": "intermediate",
+      "tags": ["accessibility", "zoom", "display"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "accessibility-zoom-toggle",
+      "category": "accessibility",
+      "name": "Toggle Zoom",
+      "description": "Toggle zoom on/off",
+      "keys": {
+        "modifiers": ["cmd", "option"],
+        "key": "8",
+        "displayFormat": "⌘⌥8"
+      },
+      "difficulty": "advanced",
+      "tags": ["accessibility", "zoom"],
+      "frequency": "rare"
+    },
+    {
+      "id": "accessibility-invert-colors",
+      "category": "accessibility",
+      "name": "Invert Colors",
+      "description": "Invert display colors",
+      "keys": {
+        "modifiers": ["ctrl", "option", "cmd"],
+        "key": "8",
+        "displayFormat": "⌃⌥⌘8"
+      },
+      "difficulty": "advanced",
+      "tags": ["accessibility", "display"],
+      "frequency": "rare"
+    },
+    {
+      "id": "accessibility-increase-contrast",
+      "category": "accessibility",
+      "name": "Increase Contrast",
+      "description": "Increase display contrast",
+      "keys": {
+        "modifiers": ["ctrl", "option", "cmd"],
+        "key": ".",
+        "displayFormat": "⌃⌥⌘."
+      },
+      "difficulty": "advanced",
+      "tags": ["accessibility", "display"],
+      "frequency": "rare"
+    },
+    {
+      "id": "accessibility-decrease-contrast",
+      "category": "accessibility",
+      "name": "Decrease Contrast",
+      "description": "Decrease display contrast",
+      "keys": {
+        "modifiers": ["ctrl", "option", "cmd"],
+        "key": ",",
+        "displayFormat": "⌃⌥⌘,"
+      },
+      "difficulty": "advanced",
+      "tags": ["accessibility", "display"],
+      "frequency": "rare"
+    },
+    {
+      "id": "system-spotlight",
+      "category": "system",
+      "name": "Spotlight Search",
+      "description": "Open Spotlight search",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "Space",
+        "displayFormat": "⌘Space"
+      },
+      "difficulty": "beginner",
+      "tags": ["system", "search"],
+      "frequency": "common"
+    },
+    {
+      "id": "system-notification-center",
+      "category": "system",
+      "name": "Notification Center",
+      "description": "Open Notification Center",
+      "keys": {
+        "modifiers": ["option"],
+        "key": "Click clock",
+        "displayFormat": "⌥Click clock"
+      },
+      "difficulty": "intermediate",
+      "tags": ["system", "notifications"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "system-sleep",
+      "category": "system",
+      "name": "Sleep",
+      "description": "Put Mac to sleep",
+      "keys": {
+        "modifiers": ["cmd", "option"],
+        "key": "Power",
+        "displayFormat": "⌘⌥Power"
+      },
+      "difficulty": "intermediate",
+      "tags": ["system", "power"],
+      "frequency": "rare"
+    },
+    {
+      "id": "system-lock-screen",
+      "category": "system",
+      "name": "Lock Screen",
+      "description": "Lock the screen immediately",
+      "keys": {
+        "modifiers": ["ctrl", "cmd"],
+        "key": "Q",
+        "displayFormat": "⌃⌘Q"
+      },
+      "difficulty": "beginner",
+      "tags": ["system", "security"],
+      "frequency": "common"
+    },
+    {
+      "id": "system-logout",
+      "category": "system",
+      "name": "Log Out",
+      "description": "Log out of current user account",
+      "keys": {
+        "modifiers": ["cmd", "shift"],
+        "key": "Q",
+        "displayFormat": "⌘⇧Q"
+      },
+      "difficulty": "intermediate",
+      "tags": ["system", "user"],
+      "frequency": "rare"
+    },
+    {
+      "id": "system-restart",
+      "category": "system",
+      "name": "Restart",
+      "description": "Restart the Mac",
+      "keys": {
+        "modifiers": ["ctrl", "cmd"],
+        "key": "Power",
+        "displayFormat": "⌃⌘Power"
+      },
+      "difficulty": "intermediate",
+      "tags": ["system", "power"],
+      "frequency": "rare"
+    },
+    {
+      "id": "system-shutdown",
+      "category": "system",
+      "name": "Shut Down",
+      "description": "Shut down the Mac",
+      "keys": {
+        "modifiers": ["ctrl", "option", "cmd"],
+        "key": "Power",
+        "displayFormat": "⌃⌥⌘Power"
+      },
+      "difficulty": "intermediate",
+      "tags": ["system", "power"],
+      "frequency": "rare"
+    },
+    {
+      "id": "safari-new-tab",
+      "category": "safari",
+      "name": "New Tab",
+      "description": "Open a new tab in Safari",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "T",
+        "displayFormat": "⌘T"
+      },
+      "difficulty": "beginner",
+      "tags": ["safari", "browser", "tab"],
+      "frequency": "common",
+      "application": "Safari"
+    },
+    {
+      "id": "safari-close-tab",
+      "category": "safari",
+      "name": "Close Tab",
+      "description": "Close current tab in Safari",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "W",
+        "displayFormat": "⌘W"
+      },
+      "difficulty": "beginner",
+      "tags": ["safari", "browser", "tab"],
+      "frequency": "common",
+      "application": "Safari"
+    },
+    {
+      "id": "safari-reopen-tab",
+      "category": "safari",
+      "name": "Reopen Closed Tab",
+      "description": "Reopen recently closed tab",
+      "keys": {
+        "modifiers": ["cmd", "shift"],
+        "key": "T",
+        "displayFormat": "⌘⇧T"
+      },
+      "difficulty": "intermediate",
+      "tags": ["safari", "browser", "tab"],
+      "frequency": "occasional",
+      "application": "Safari"
+    },
+    {
+      "id": "safari-next-tab",
+      "category": "safari",
+      "name": "Next Tab",
+      "description": "Switch to next tab",
+      "keys": {
+        "modifiers": ["ctrl"],
+        "key": "Tab",
+        "displayFormat": "⌃Tab"
+      },
+      "difficulty": "beginner",
+      "tags": ["safari", "browser", "navigation"],
+      "frequency": "common",
+      "application": "Safari"
+    },
+    {
+      "id": "safari-previous-tab",
+      "category": "safari",
+      "name": "Previous Tab",
+      "description": "Switch to previous tab",
+      "keys": {
+        "modifiers": ["ctrl", "shift"],
+        "key": "Tab",
+        "displayFormat": "⌃⇧Tab"
+      },
+      "difficulty": "intermediate",
+      "tags": ["safari", "browser", "navigation"],
+      "frequency": "common",
+      "application": "Safari"
+    },
+    {
+      "id": "safari-reload",
+      "category": "safari",
+      "name": "Reload Page",
+      "description": "Reload current page",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "R",
+        "displayFormat": "⌘R"
+      },
+      "difficulty": "beginner",
+      "tags": ["safari", "browser", "refresh"],
+      "frequency": "common",
+      "application": "Safari"
+    },
+    {
+      "id": "safari-back",
+      "category": "safari",
+      "name": "Go Back",
+      "description": "Navigate back in history",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "[",
+        "displayFormat": "⌘["
+      },
+      "difficulty": "beginner",
+      "tags": ["safari", "browser", "navigation"],
+      "frequency": "common",
+      "application": "Safari"
+    },
+    {
+      "id": "safari-forward",
+      "category": "safari",
+      "name": "Go Forward",
+      "description": "Navigate forward in history",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "]",
+        "displayFormat": "⌘]"
+      },
+      "difficulty": "beginner",
+      "tags": ["safari", "browser", "navigation"],
+      "frequency": "common",
+      "application": "Safari"
+    },
+    {
+      "id": "safari-bookmark",
+      "category": "safari",
+      "name": "Add Bookmark",
+      "description": "Bookmark current page",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "D",
+        "displayFormat": "⌘D"
+      },
+      "difficulty": "beginner",
+      "tags": ["safari", "browser", "bookmark"],
+      "frequency": "occasional",
+      "application": "Safari"
+    },
+    {
+      "id": "safari-downloads",
+      "category": "safari",
+      "name": "Show Downloads",
+      "description": "Show downloads window",
+      "keys": {
+        "modifiers": ["cmd", "option"],
+        "key": "L",
+        "displayFormat": "⌘⌥L"
+      },
+      "difficulty": "intermediate",
+      "tags": ["safari", "browser", "downloads"],
+      "frequency": "occasional",
+      "application": "Safari"
+    },
+    {
+      "id": "mail-new-message",
+      "category": "mail",
+      "name": "New Message",
+      "description": "Compose new email message",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "N",
+        "displayFormat": "⌘N"
+      },
+      "difficulty": "beginner",
+      "tags": ["mail", "email", "compose"],
+      "frequency": "common",
+      "application": "Mail"
+    },
+    {
+      "id": "mail-reply",
+      "category": "mail",
+      "name": "Reply",
+      "description": "Reply to email",
+      "keys": {
+        "modifiers": ["cmd"],
+        "key": "R",
+        "displayFormat": "⌘R"
+      },
+      "difficulty": "beginner",
+      "tags": ["mail", "email", "reply"],
+      "frequency": "common",
+      "application": "Mail"
+    },
+    {
+      "id": "mail-reply-all",
+      "category": "mail",
+      "name": "Reply All",
+      "description": "Reply to all recipients",
+      "keys": {
+        "modifiers": ["cmd", "shift"],
+        "key": "R",
+        "displayFormat": "⌘⇧R"
+      },
+      "difficulty": "beginner",
+      "tags": ["mail", "email", "reply"],
+      "frequency": "occasional",
+      "application": "Mail"
+    },
+    {
+      "id": "mail-forward",
+      "category": "mail",
+      "name": "Forward",
+      "description": "Forward email",
+      "keys": {
+        "modifiers": ["cmd", "shift"],
+        "key": "F",
+        "displayFormat": "⌘⇧F"
+      },
+      "difficulty": "beginner",
+      "tags": ["mail", "email", "forward"],
+      "frequency": "occasional",
+      "application": "Mail"
+    },
+    {
+      "id": "mail-send",
+      "category": "mail",
+      "name": "Send Email",
+      "description": "Send composed email",
+      "keys": {
+        "modifiers": ["cmd", "shift"],
+        "key": "D",
+        "displayFormat": "⌘⇧D"
+      },
+      "difficulty": "beginner",
+      "tags": ["mail", "email", "send"],
+      "frequency": "common",
+      "application": "Mail"
+    },
+    {
+      "id": "mail-delete",
+      "category": "mail",
+      "name": "Delete Email",
+      "description": "Delete selected email",
+      "keys": {
+        "modifiers": [],
+        "key": "Delete",
+        "displayFormat": "⌫"
+      },
+      "difficulty": "beginner",
+      "tags": ["mail", "email", "delete"],
+      "frequency": "common",
+      "application": "Mail"
+    },
+    {
+      "id": "text-page-up",
+      "category": "text-editing",
+      "name": "Page Up",
+      "description": "Move up one page",
+      "keys": {
+        "modifiers": [],
+        "key": "Page Up",
+        "displayFormat": "Page Up"
+      },
+      "difficulty": "beginner",
+      "tags": ["text", "navigation"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "text-page-down",
+      "category": "text-editing",
+      "name": "Page Down",
+      "description": "Move down one page",
+      "keys": {
+        "modifiers": [],
+        "key": "Page Down",
+        "displayFormat": "Page Down"
+      },
+      "difficulty": "beginner",
+      "tags": ["text", "navigation"],
+      "frequency": "occasional"
+    },
+    {
+      "id": "text-select-all-above",
+      "category": "text-editing",
+      "name": "Select All Above",
+      "description": "Select all text above cursor",
+      "keys": {
+        "modifiers": ["cmd", "shift"],
+        "key": "Up",
+        "displayFormat": "⌘⇧↑"
+      },
+      "difficulty": "advanced",
+      "tags": ["text", "selection"],
+      "frequency": "rare"
+    },
+    {
+      "id": "text-select-all-below",
+      "category": "text-editing",
+      "name": "Select All Below",
+      "description": "Select all text below cursor",
+      "keys": {
+        "modifiers": ["cmd", "shift"],
+        "key": "Down",
+        "displayFormat": "⌘⇧↓"
+      },
+      "difficulty": "advanced",
+      "tags": ["text", "selection"],
+      "frequency": "rare"
+    }
+  ]
+}
